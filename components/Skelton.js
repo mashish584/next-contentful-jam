@@ -1,6 +1,6 @@
 import React from "react";
 
-export default () => {
+const Skelton = () => {
   return (
     <div className="skelton">
       <div className="s-banner"></div>
@@ -33,3 +33,5 @@ export default () => {
     </div>
   );
 };
+
+export default Skelton;

@@ -96,5 +96,6 @@ export async function getStaticProps({ params }) {
       receipe: items[0],
     },
     revalidate: 1,
+    notFound: items.length === 0,
   };
 }
