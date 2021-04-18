@@ -1,8 +1,17 @@
-import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
+import { useRouter } from "next/router";
 import Image from "next/image";
+import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
+
+import Skelton from "../../components/Skelton";
 import client from "../../utils/client";
 
 export default function RecipeDetails({ receipe }) {
+  const router = useRouter();
+
+  if (router.isFallback) {
+    return <Skelton />;
+  }
+
   const { featuredImage, title, cookingTime, ingredients, method } = receipe.fields;
 
   let imageDetailsProps = {};
@@ -72,7 +81,7 @@ export async function getStaticPaths() {
 
   return {
     paths,
-    fallback: false,
+    fallback: true,
   };
 }
 
