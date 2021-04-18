@@ -2,7 +2,7 @@ import React from "react";
 
 export default () => {
   return (
-    <div>
+    <div className="skelton">
       <div className="s-banner"></div>
       <div className="s-header"></div>
       <div className="s-content"></div>
